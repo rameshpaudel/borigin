@@ -1,0 +1,360 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "mixins";
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400italic|Exo+2|Play|Orbitron|Armata|Ubuntu);
+$primary: #586682;
+// $primary: rgba(216, 207, 131, 1);
+// $secondary: #586682;
+$secondary: #009688;
+$nav: #6B6B6B;
+$text: #5a5a5a;
+$anchor: #ddd;
+$semi-w: rgba(255, 255, 255, 0.8);
+$semi-b: rgba(47, 47, 47, 0.5);
+$nav-font: 'Orbitron', sans-serif;
+$title-font: 'Play', sans-serif;
+$subtitle-font: 'Ubuntu', sans-serif;
+$text-font: 'Armanta', sans-serif;
+$text-font2: 'Exo 2', sans-serif;
+// $dfallback: ;
+.center {
+	text-align: center !important;
+}
+
+
+
+
+///// SCROLL UP ///////
+.scroll-up {
+	border-style: solid;
+	border-width: 0 0 48px 48px;
+	border-color: transparent transparent rgba(27, 18, 18, 0.6) transparent;
+	position: fixed;
+	// display: none;
+	right: 0px;
+	bottom: 0px;
+	width: 0;
+	height: 0;
+	z-index: 999;
+	-webkit-transition: -webkit-transform 0.8s ease-in-out;
+	-moz-transition: -moz-transform 0.8s ease-in-out;
+	-o-transition: -o-transform 0.8s ease-in-out;
+	transition: transform 0.8s ease-in-out;
+}
+
+.scroll-up a {
+	position: relative;
+	display: inline-block;
+	padding: 22px;
+	bottom: 0px;
+	left: -44px;
+	font-size: 18px;
+	color: #FFF;
+}
+
+.scroll-up a:hover {
+	color: #D12424;
+}
+
+
+
+// SLIDER //
+.slider {
+	height: 610px;
+	width: 100% !important;
+	overflow: hidden;
+	box-shadow: 0px 2px 2px #ddd;
+
+	.owl-carousel {
+		text-align: center;
+		height: inherit;
+		color: #fff;
+
+		.owl-item {
+			height: 700px;
+			padding-top: 200px;
+			text-shadow: 1px 1px 1px #5a5a5a;
+			background-color: rgba(47, 47, 47, 0.4);
+
+			img {
+				width: 100px;
+				margin: 50px;
+			}
+		}
+	}
+}
+
+
+
+
+////////// DROPDOWN MENU /////////
+.dropdown-menu {
+	width: 800px !important;
+	margin-left: -90px;
+}
+.equal-height-list {
+	border-right: 1px solid #ddd;
+	padding-left: 10px !important;
+
+	li {
+		margin: 5px auto;
+		width: 120%;
+
+		a {
+			padding: 5px 10px !important;
+			margin: 0 !important;
+		}
+	}
+}
+
+#page {
+	background-color: #fff;
+}
+
+///////// OUR SERVICES /////////
+
+ .funny-box .funny-box-text ul {
+	 position: relative;
+	 padding-bottom: 25px;
+	 font-size: 25px;
+	 text-transform: uppercase;
+	 letter-spacing: 0.2em;
+	 padding: 0;
+	 
+ }
+
+ ///////// OUR COURSES ///////////
+
+ .pricing-table .pricing-wrapper > .pricing-column > .plan-title > h2 {
+	 display: block;
+	 margin: 0;
+	 height: 74px;
+	 line-height: 74px;
+	 background-color: #D12424;
+	 color: #fff;
+	 font-size: 18px;
+	 font-weight: 300;
+	 text-transform: uppercase;
+	 letter-spacing: 3px;
+}
+
+.header {
+	position: relative;
+	nav.navbar {
+		min-height: 80px !important;
+		@include mobile {
+			min-height: 72px !important;
+		}
+
+
+		ul.nav a{
+			color: #5a5a5a;
+			margin: 0 2em;
+		}
+		.navbar-left {
+			margin-left: 8em;
+			@include mobile {
+				margin-left: 0px !important;
+			}
+		}
+		.navbar-right {margin-right: 10em;}
+	}
+	.navbar-header {
+		position: absolute;
+		padding-bottom: 1em;
+		left: 44%;
+		@include mobile {
+			left: 0;
+			border-bottom: 1px solid #D12424 + 100;
+			position: relative;
+			padding-bottom: 0;
+
+			.navbar-toggle {
+				margin-left: 8em;
+				margin-top: 1em;
+			}
+		}
+		@include tab {
+			left: 0;
+			border-bottom: 1px solid $primary + 100;
+		}
+
+	}
+	.navbar-brand {
+		width: 200px;
+		margin: 0 auto;
+		padding-bottom: 2em;
+		@include mobile {
+			width: 150px;
+		}
+
+		img {
+			width: inherit;
+
+		}
+	}
+	.navbar-collapse {
+		margin-top: 25px;
+	}
+	.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+	    max-height: 500px;
+	}
+	.navbar-toggle {
+		.fa{color: #ddd;}
+		
+	}
+}
+.footer {
+	.quicknav {
+
+		li {
+			margin-bottom: 10px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #5a5a5a;
+
+		}
+	}
+}
+
+.clients {
+	background-color: #5a5a5a;
+	height: 300px;
+
+	h2 {
+		text-align: center;
+		padding: 75px 0 25px;
+	}
+}
+///// ABOUT /////
+
+.process {
+	position: relative;
+	h3,p {
+		text-align: center;
+		text-shadow: 1px 1px 1px #ddd;
+		margin-top: 25px;
+	}
+	.content {
+		margin: 100px 0;
+		div,i {
+			float: left;
+		}
+
+		i{
+			padding: 25px;
+			background-color: rgb(240, 154, 108);
+			border-radius: 100px;
+		}
+		.test {
+			margin-top: 50px;
+		}
+	}
+
+	.doted {
+		width: 380px;
+		height: 380px;
+		background-color: transparent;
+		border-radius: 200px;
+		border: 2px dotted rgb(240, 154, 108);
+		position: absolute;
+		top: 0;
+		left: 30px;
+	}
+	.hide1 {
+		width: 400px;
+		height: 200px;
+		background-color: #55a;
+		position: absolute;
+		top: 0;
+		left: 30px;
+
+	}
+	.doted2 {
+		width: 380px;
+		height: 380px;
+		background-color: transparent;
+		border-radius: 200px;
+		border: 2px dotted rgb(240, 154, 108);
+		position: absolute;
+		bottom: 0;
+		right: 30px;
+	}
+}
+
+
+
+///// COUNTRY /////
+
+.country {
+	margin-bottom: 50px;
+	h1 {
+		color: #5a5a5a;
+		text-shadow: 0px 1px 1px #856F1B;
+		margin: 50px 0 40px;
+		font-family: 'sans-serif';
+	}
+
+	.intro {
+		padding: 50px 10px;
+		text-align: justify;
+		border-top: 1px solid #ccc;
+
+	}
+
+	article {
+		padding: 0 25px;
+
+		img {
+			margin: 5px 0 50px 25px ;
+			width: 85%;
+			box-shadow: 2px 2px 4px #5a5a5a;
+		}
+
+		ul {
+			padding-left: 25px;
+		}
+		div {
+			margin: 50px 0;
+			color: #444;
+
+			h4 {
+				margin: 30px 0 10px;
+				font-size: 1.7em;
+			}
+		}
+	}
+
+	aside {
+		box-shadow: 1px 2px 5px #ddd, -1px 0px 5px #ddd;
+		padding-top: 20px;
+
+		div {
+			border-bottom: 1px solid #ddd;
+			margin-top: 20px;
+		}
+
+		ul {
+			padding: 15px;
+
+			li {
+				border-bottom: 1px solid #eee;
+				padding: 5px 1px;
+			}
+		}
+
+
+		.flags {
+			padding-bottom: 30px;
+			a {
+				width: 30%;
+
+				img {
+					padding: 10px;
+					width: inherit;
+				}
+			}
+		}
+	}
+}
