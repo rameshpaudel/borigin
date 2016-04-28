@@ -42,7 +42,7 @@ get_header();
                     <div class="col-md-6">
                         <div class="who-we-are-text">
                             <h4>A Little About Our Past</h4>
-                            <p><?php the_content(); ?></p>
+                            <p><?php echo $post->post_content; ?></p>
                             <div class="page-scroll">
                                 <a href="#" class="btn btn-lg btn-custom">Read More</a>
                             </div>

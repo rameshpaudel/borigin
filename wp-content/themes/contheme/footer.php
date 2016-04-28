@@ -3,27 +3,6 @@
         <section id="footer">            
             <div class="container">    
                 <div class="row">
-                    <?php if ( is_active_sidebar( 'footer-left-widget' ) ) : ?>
-                           <?php dynamic_sidebar( 'footer-left-widget' ); ?>
-                    <?php endif; ?>
-                        <!-- //.footer-text -->
-                    
-                    <!-- //.footer-column -->
-                    
-                    
-                    
-                    <?php if ( is_active_sidebar( 'footer-center-widget' ) ) : ?>
-                            <?php dynamic_sidebar( 'footer-center-widget' ); ?>
-                    <?php endif; ?>
-                        <!-- //.footer-text -->
-                        <!-- //.footer-text -->
-                    </div>
-                    <!-- //.footer-column -->
-
-                    <div class="col-sm-4 col-md-4 footer-column not-right-column">
-                     <?php if ( is_active_sidebar( 'footer-right-widget' ) ) : ?>
-                            <?php dynamic_sidebar( 'footer-right-widget' ); ?>
-                    <?php endif; ?>
                         <div class="footer-text">
                             <h4>Contact</h4>
                             <ul class="icon-list list-unstyled">
