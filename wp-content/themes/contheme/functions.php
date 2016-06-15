@@ -6,6 +6,7 @@ add_theme_support('post-thumbnails');
 include get_template_directory() . '/includes/front/enqueue.php';
 include get_template_directory() . '/includes/front/navigations.php';
 include get_template_directory() . '/includes/widgets.php';
+include get_template_directory() . '/includes/general-settings.php';
 //	include( get_template_directory() . '/includes/custom-post-type.php' );
 
 //Applying filters and hooks

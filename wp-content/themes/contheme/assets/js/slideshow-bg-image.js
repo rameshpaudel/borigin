@@ -1,4 +1,4 @@
-$(function(){
+/*$(function(){
     
     // jQuery backstretch
     if (jQuery.browser.mobile === false) 
@@ -8,4 +8,4 @@ $(function(){
             , "assets/img/intro/bg-intro-2.jpg"
         ], {duration: 1500, fade: 3000});
     }
-});
+});*/

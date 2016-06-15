@@ -1,4 +1,4 @@
-$(function(){
+/*$(function(){
     // Only animate elements when using non-mobile devices    
     if (jQuery.browser.mobile === false) 
     {
@@ -16,4 +16,4 @@ $(function(){
             });
         });
     }
-});
+});*/

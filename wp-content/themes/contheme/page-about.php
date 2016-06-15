@@ -27,13 +27,14 @@ get_header();
                     <div class="col-md-6">
                         <div id="carousel-who-we-are" class="owl-carousel owl-theme">
                             <div class="item">
-                                <img src="assets/img/who-we-are/who-we-are-image-1.jpg" alt="" class="img-responsive img-rounded"/>
+                            <?php echo types_render_field('first-image'); ?>
                             </div>
                             <div class="item">
-                                <img src="assets/img/who-we-are/who-we-are-image-2.jpg" alt="" class="img-responsive img-rounded"/>
+                            <?php echo types_render_field('second-image'); ?>
+                                
                             </div>
                             <div class="item">
-                                <img src="assets/img/who-we-are/who-we-are-image-3.jpg" alt="" class="img-responsive img-rounded"/>
+                               <?php echo types_render_field('second-image'); ?>
                             </div>
                         </div>
                         <!-- //.owl-carousel -->
@@ -41,11 +42,8 @@ get_header();
 
                     <div class="col-md-6">
                         <div class="who-we-are-text">
-                            <h4>A Little About Our Past</h4>
                             <p><?php echo $post->post_content; ?></p>
-                            <div class="page-scroll">
-                                <a href="#" class="btn btn-lg btn-custom">Read More</a>
-                            </div>
+                            
                         </div>
                         <!-- //.who-we-are-text -->
                     </div>
@@ -59,86 +57,59 @@ get_header();
     <!-- //END WHO WE ARE SECTION -->
 
 
-    <!-- BEGIN COUNTERS SECTION -->
-    <section id="counters" class="section section-bgtype-image">
-    
+   <!-- BEGIN CONTENT BOXES SECTION -->
+    <section id="why-us" class="section">
+        
         <div class="section-inner">
-            
-            <div class="bg-overlay"></div>
             
             <div class="container section-content">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-title text-center">
-                            <h2 class="main-title">Little Known Facts!</h2>
-                            <h3 class="sub-title">Some Of The Cool Facts About Us That Will Blow Your Mind</h3>
+                            <h2 class="main-title">Why Choose Us?</h2>
+                            <h3 class="sub-title">Six Reasons Why We are the best</h3>
                             <span class="section-line"></span>
                         </div>
                         <!-- //.section-title -->
                     </div>
-                </div>
+                </div>    
                 <!-- //.row -->
 
                 <div class="row">
-                    <div class="col-sm-6 col-md-3 text-center">
-                        <div class="counter-item not-right-column top-column">
-                            <i class="fa fa-thumbs-o-up fa-5x"></i>
-                            <div class="inner-content">
-                                <span class="number" data-from="2200" data-to="2780" data-refresh-interval="10">
-                                    2200
-                                </span>
+                <?php
+                //Fetching the testimonials
+                $args = array('post_type' => 'why-choose-us', 'posts_per_page' => 6);
+                $reasons = new WP_Query($args);
+                if ($reasons->have_posts()): while ($reasons->have_posts()): $reasons->the_post();
+                        ?>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="content-box style-one top-column clearfix">
+                            <span class="content-box-icon">
+                                <i class="fa <?php echo types_render_field('service-icon') ?>"></i> 
+                            </span>
+                            <div class="content-box-text">
+                                <h4><?php the_title(); ?></h4>
+                                <p><?php the_content(); ?></p>
                             </div>
-                            <p>VISA</p>
+                            <!-- //.content-box-text -->
                         </div>
-                        <!-- //.counter-item -->
+                        <!-- //.content-box -->
                     </div>
-
-                    <div class="col-sm-6 col-md-3 text-center">
-                        <div class="counter-item not-right-column top-column">
-                            <i class="fa fa-smile-o fa-5x"></i>
-                            <div class="inner-content">
-                                <span class="number" data-from="330" data-to="487" data-refresh-interval="10">
-                                    330
-                                </span>
-                            </div>
-                            <p>Clients</p>
-                        </div>
-                        <!-- //.counter-item -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 text-center">
-                        <div class="counter-item not-right-column">
-                            <i class="fa fa-coffee fa-5x"></i>
-                            <div class="inner-content">
-                                <span class="number" data-from="13300" data-to="13730" data-refresh-interval="10">
-                                    13300
-                                </span>
-                            </div>
-                            <p>Students</p>
-                        </div>
-                        <!-- //.counter-item -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 text-center">
-                        <div class="counter-item">
-                            <i class="fa fa-gift fa-5x"></i>
-                            <div class="inner-content">
-                                <span class="number" data-from="10" data-to="154" data-refresh-interval="10">
-                                    23
-                                </span>
-                            </div>
-                            <p>Awards</p>
-                        </div>
-                        <!-- //.counter-item -->
-                    </div>
+                <?php 
+                endwhile; 
+                endif;?>
+                 
                 </div>
                 <!-- //.row -->
+
+             
+                <!-- //.row -->              
             </div>
             <!-- //.section-content -->
         </div>
         <!-- //.section-inner -->
     </section>
-    <!-- //END COUNTERS SECTION -->
+    <!-- //END CONTENT BOXES SECTION -->
 
 
 

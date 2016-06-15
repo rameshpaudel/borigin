@@ -1,8 +1,64 @@
+$t: transparent;
+
+@mixin mobile {
+	@media screen and (max-width:640px) {
+		@content;
+	}
+}
+
+@mixin tab {
+	@media screen and (max-width:1024px) {
+		@content;
+	}
+}
+
+@mixin gap($mar: 25px, $border: transparent){
+	width: 80%;
+	margin: $mar auto $mar;
+	border-bottom: 1px solid $border;
+}
+
+@mixin box ($bg:transparent, $p:15px, $r:0px, $b:transparent, $s:transparent) {
+	background-color: $bg;
+	padding: $p;
+	border-radius: $r;
+	border: 1px solid $b;
+	box-shadow: 2px 2px 2px $s, -2px 2px 2px $s;
+}
+
+@mixin round ($width, $border:transparent, $shadow:transparent) {
+	width: $width;
+	height: $width;
+	border-radius: $width / 2;
+	border: 1px solid $border;
+	box-shadow: 1px 1px 1px $shadow;
+
+}
+@mixin button ($color, $bg, $border:transparent, $shadow:transparent, $radius:0px) {
+	color: $color;
+	background-color: $bg;
+	border: 1px solid $border;
+	box-shadow: 1px 2px 2px $shadow;
+	border-radius: $radius;
+}
+
+button.custom, .button.custom {
+	background-color: #3ADB3A;
+	border-color: #22bb22;
+	color: #FFFFFF; 
+}
+button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
+  background-color: #22bb22; 
+}
+button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
+  color: #FFFFFF; 
+}
+
 /*
  * Button mixin- creates 3d-ish button effect with correct
  * highlights/shadows, based on a base color.
  */
-@mixin button( $button-color, $text-color: white ) {
+@mixin buttond( $button-color, $text-color: white ) {
 	background: $button-color;
 	border-color: darken( $button-color, 10% ) darken( $button-color, 15% ) darken( $button-color, 15% );
 	color: $text-color;
@@ -49,3 +105,6 @@
 	}
 
 }
+
+
+

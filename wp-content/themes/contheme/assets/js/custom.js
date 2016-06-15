@@ -53,10 +53,19 @@ $(document).ready(function(){
 	wow = new WOW(
 	  {
 		animateClass: 'animated',
-		offset:       150
+		offset:       100
 	  }
 	);
 	wow.init();							  
 });
+if(typeof slidingImages !== 'undefined'){
+    $('.slider').backstretch(slidingImages, {duration: 3000, fade: 1750});
+}
 
-$('.slider').backstretch(slidingImages, {duration: 3000, fade: 1750});
+
+ $("#carousel-who-we-are").owlCarousel({
+        autoPlay: true,
+        slideSpeed: 300,
+        paginationSpeed: 400,
+        singleItem: true
+    }); 

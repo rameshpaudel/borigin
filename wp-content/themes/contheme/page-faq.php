@@ -11,7 +11,7 @@ get_header();
 	            <div class="row">
 	                <div class="col-md-12">
 	                    <h1 class="wow animated fadeInDown">Frequently Asked Questions (FAQ)</h1>
-	                    <p class="wow animated fadeInUp">Anything you need to know about our services and products</p>
+	                    <p class="wow animated fadeInUp">Anything you need to know about our services</p>
 	                    <ul class="breadcrumb visible-md visible-lg wow animated fadeInLeftBig">
 	                        <li><a href="<?php echo site_url(); ?>">Home</a></li>
 	                        <li class="active">FAQ</li>
@@ -28,7 +28,7 @@ get_header();
                         <section class="boxFocus color2 wow animated fadeInLeft">
                             <h2>Answers to the most common questions <br>
                                 asked by students.</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut auctor lorem. Curabitur at lobortis nulla. Sed tincidunt, orci sit amet varius ornare,</p>
+                               
                         </section>
                     </aside>
                     <div class="col-md-8 wow animated fadeInRight">

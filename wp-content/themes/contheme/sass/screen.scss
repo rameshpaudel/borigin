@@ -2,22 +2,30 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
 @import "mixins";
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400italic|Exo+2|Play|Orbitron|Armata|Ubuntu);
-$primary: #586682;
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+$primary: #00579E;
 // $primary: rgba(216, 207, 131, 1);
-// $secondary: #586682;
+// $secondary: $primary;
 $secondary: #009688;
-$nav: #6B6B6B;
+$dark-color :#515862;
+$nav: #F16C21;
 $text: #5a5a5a;
 $anchor: #ddd;
 $semi-w: rgba(255, 255, 255, 0.8);
 $semi-b: rgba(47, 47, 47, 0.5);
-$nav-font: 'Orbitron', sans-serif;
-$title-font: 'Play', sans-serif;
-$subtitle-font: 'Ubuntu', sans-serif;
+$nav-font: 'Noto', sans-serif;
+$title-font: 'Roboto Slab', sans-serif;
+$subtitle-font: 'Roboto', sans-serif;
 $text-font: 'Armanta', sans-serif;
 $text-font2: 'Exo 2', sans-serif;
+
+
+//@import "head";
+@import "features";
+@import "style";
 // $dfallback: ;
 .center {
 	text-align: center !important;
@@ -55,18 +63,20 @@ $text-font2: 'Exo 2', sans-serif;
 }
 
 .scroll-up a:hover {
-	color: #D12424;
+	color: #00579E;
 }
 
 
 
 // SLIDER //
 .slider {
-	height: 610px;
+	height: 600px;
 	width: 100% !important;
 	overflow: hidden;
-	box-shadow: 0px 2px 2px #ddd;
-
+	box-shadow: inset 0px 2px 2px #ddd;
+	@include mobile{
+		height: 90vh;
+	}
 	.owl-carousel {
 		text-align: center;
 		height: inherit;
@@ -77,6 +87,10 @@ $text-font2: 'Exo 2', sans-serif;
 			padding-top: 200px;
 			text-shadow: 1px 1px 1px #5a5a5a;
 			background-color: rgba(47, 47, 47, 0.4);
+			@include tab{
+				height: 80vh;
+				padding-top:10vh;
+			}
 
 			img {
 				width: 100px;
@@ -122,7 +136,7 @@ $text-font2: 'Exo 2', sans-serif;
 	 text-transform: uppercase;
 	 letter-spacing: 0.2em;
 	 padding: 0;
-	 
+
  }
 
  ///////// OUR COURSES ///////////
@@ -132,7 +146,7 @@ $text-font2: 'Exo 2', sans-serif;
 	 margin: 0;
 	 height: 74px;
 	 line-height: 74px;
-	 background-color: #D12424;
+	 background-color: #00579E;
 	 color: #fff;
 	 font-size: 18px;
 	 font-weight: 300;
@@ -152,23 +166,23 @@ $text-font2: 'Exo 2', sans-serif;
 
 		ul.nav a{
 			color: #5a5a5a;
-			margin: 0 2em;
-		}
-		.navbar-left {
-			margin-left: 8em;
-			@include mobile {
-				margin-left: 0px !important;
+			padding: 1.5rem 3rem;
+			font-weight: bold;
+			border-bottom: 2px solid transparent;
+			transition: all 0.2s ease-in-out;
+			&:hover{
+				border-bottom: 2px solid $nav;
+				background: transparent;
 			}
 		}
-		.navbar-right {margin-right: 10em;}
+
 	}
 	.navbar-header {
-		position: absolute;
+		//position: absolute;
 		padding-bottom: 1em;
-		left: 44%;
+
 		@include mobile {
 			left: 0;
-			border-bottom: 1px solid #D12424 + 100;
 			position: relative;
 			padding-bottom: 0;
 
@@ -184,7 +198,7 @@ $text-font2: 'Exo 2', sans-serif;
 
 	}
 	.navbar-brand {
-		width: 200px;
+		width: 22rem;
 		margin: 0 auto;
 		padding-bottom: 2em;
 		@include mobile {
@@ -193,18 +207,34 @@ $text-font2: 'Exo 2', sans-serif;
 
 		img {
 			width: inherit;
+			padding: 1px;
+		  margin-top: -15px;
+		  border-width: 1px;
+			@include tab {
+				padding: .5rem;
+				margin-top: -1.5rem;
+			}
+		    /*
+				Border red remove
 
+		    border-style: solid;
+		    -webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from(black), to(rgba(0, 0, 0, 0))) 1 100%;
+		    -webkit-border-image: -webkit-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+		    -moz-border-image: -moz-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+		    -o-border-image: -o-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+		    border-image: linear-gradient(to bottom, #F27D3C, rgba(0, 0, 0, 0)) 1 93%; */
 		}
 	}
-	.navbar-collapse {
-		margin-top: 25px;
+	.navbar-left, .navbar-right{
+		margin-top: 5rem;
 	}
-	.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
-	    max-height: 500px;
-	}
+
 	.navbar-toggle {
-		.fa{color: #ddd;}
-		
+		.fa{
+			color: $primary;
+			//margin-top: 2rem;
+		}
+
 	}
 }
 .footer {
@@ -294,7 +324,7 @@ $text-font2: 'Exo 2', sans-serif;
 		color: #5a5a5a;
 		text-shadow: 0px 1px 1px #856F1B;
 		margin: 50px 0 40px;
-		font-family: 'sans-serif';
+		font-family: $title-font;
 	}
 
 	.intro {
@@ -346,6 +376,7 @@ $text-font2: 'Exo 2', sans-serif;
 		}
 
 
+
 		.flags {
 			padding-bottom: 30px;
 			a {
@@ -363,15 +394,19 @@ $text-font2: 'Exo 2', sans-serif;
 	.menu-item-has-children{
 
 		ul.sub-menu {
+			padding: 0;
 			background: #fff;
 			position: absolute;
-			top: 55px;
-			width: 615px;
-			padding: 15px 0 15px 15px;
+			top: 50px;
 			display: none;
 
 			li {
-				display: inline-block;
+				display: block;
+				width: 100%;
+				a{
+					padding: 10px 1.618rem;
+					display: block;
+				}
 			}
 
 
@@ -382,7 +417,7 @@ $text-font2: 'Exo 2', sans-serif;
 				li {
 					display: block;
 				}
-			} 
+			}
 		}
 
 		&:hover {
@@ -391,5 +426,273 @@ $text-font2: 'Exo 2', sans-serif;
 			}
 		}
 	}
-	
+
+}
+/* Quick FIxES */
+.other-services{
+	list-style: none;
+	display: block;
+	padding: 0 !important;
+	li{
+		padding: 0;
+		.fa{
+			vertical-align: middle;}
+		span.title{
+			margin-left: .618rem;
+			font-size:1.618rem;
+		}
+		a{
+			padding: 5px 15px;
+			display: block;
+			line-height: 2.1;
+			width: 100% !important;
+			min-height: 45px;
+			color:black;
+			 &:hover{
+			 	.fa{
+			 		color:#00579E;
+			 	}
+			 	box-shadow: 0px 1px 2px #ccc;
+			 }
+
+		}
+
+	}
+
+}
+.current-menu-item{
+	a{
+		border-bottom:2px solid $nav + 10 !important;
+		height:110%;
+		color:$nav !important;
+		transition: all 0.2s ease-in-out;
+		&:hover{
+			color: $primary !important;
+		}
+	}
+}
+@include mobile {
+
+	.header .navbar-header{
+		width: 100% !important;
+
+	}
+	.header nav.navbar{
+		min-height: 70px !important;
+	}
+
+}
+.slider-content{
+	padding: 0rem 1rem;
+	width:80%;
+	margin: 0 auto;
+}
+.cramp-3{
+	line-height: 20px;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	max-height: 75px;      /* fallback */
+	-webkit-line-clamp: 3; /* number of lines to show */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	color:black;
+
+}
+.margin-fix{
+	padding-bottom: 2rem;
+	margin-bottom: 3.14rem;
+}
+.recent-news-heightfix{
+	min-height: 70px !important;
+	&:hover{
+		background: #005893;
+		color:white;
+	}
+}
+
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse{
+	max-height: 800px !important;
+}
+.wpcf7-form{
+	position: relative;
+	display: block;
+	height: 250px;
+	@include mobile {
+		height: inherit !important;
+	}
+	input[type="submit"]{
+		height: auto !important;
+	}
+	p {
+		input, textarea {
+			width: 450px;
+			@include mobile {
+				width: 100% !important;
+				position: relative;
+			}
+		}
+		input{
+			height: 40px;
+			@include mobile {
+				height: auto;
+			}
+		}
+		@include mobile {
+			width: 95%;
+			position: static !important;
+			margin: 0 auto;
+			float: none;
+
+		}
+		width: 45%;
+		color: #979797;
+		font-family: $subtitle-font !important;
+		float: left;
+		text-transform: uppercase;
+		position: absolute;
+		font-size: 18px;
+		letter-spacing: 2px;
+		font-weight: 200;
+
+		&:nth-child(2) {
+			@include mobile {
+				left: 0;
+				right: 0;
+				position: static !important;
+			}
+			top: 0;
+			left: 120px;
+		}
+		&:nth-child(3) {
+			@include mobile {
+				left: 0;
+				right: 0;
+				position: static !important;
+			}
+			top: 80px;
+			left: 120px;
+		}
+		&:nth-child(4) {
+			@include mobile {
+				left: 0;
+				right: 0;
+				position: static !important;
+			}
+			top: 160px;
+			left: 120px;
+		}
+		&:nth-child(5) {
+			@include mobile {
+				left: 0;
+				right: 0;
+				position: static !important;
+			}
+			textarea {
+				height: 120px;
+			}
+			top: 0;
+			right: 40px;
+		}
+		&:nth-child(6) {
+			@include mobile {
+				left: 0;
+				right: 0;
+				position: static !important;
+			}
+			right: 40px;
+			bottom: 7px;
+			input {
+				background: #3088bb;
+				border-color: #3088bb;
+				color: #fff;
+				line-height: 3;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+.panel-default>.panel-heading{
+	background-color: $dark-color !important;
+	.panel-title{
+		color : white !important;
+	}
+}
+
+.map{
+	position: relative;
+	.facebook{
+		position: absolute;
+		right: 0;
+		top: 0;
+		@include mobile {
+			display: none;
+		}
+	}
+}
+.callout{
+	background: $primary;
+  @include angle(both);
+	h2{
+		color:white;
+
+	}
+	.btn{
+		color:white !important;
+		background: $nav;
+		line-height: 3;
+		font-size: 1.618rem;
+		text-transform: uppercase;
+		padding-left: 1.618rem;
+		padding-right: 1.618rem;
+		@include mobile {
+			margin: 0 auto;
+			text-align: center;
+		}
+	}
+}
+
+footer{
+	ul{
+		padding: 0;
+		margin: 0;
+		li.page_item {
+			list-style: none;
+			line-height: 1.6;
+			a{
+				color: white;
+				text-decoration: none;
+			}
+
+		}
+	}
+}
+
+.footer-column{
+	text-align: center;
+}
+
+.copyright{
+	.pull-right{
+		@include mobile {
+			float: none !important;
+
+		}
+	}
+}
+#quote{
+	  @include angle(before, true);
+}
+.home.section-title{
+	  @include angle(before, true);
+		left:-20%;
+		@include tab {
+			width: 117vw;
+		}
+		width: 109vw;
+		background: #00579E;
+		height: 100%;
+		color: white !important;
+		margin-bottom: 8rem;
+		padding:2rem;
 }

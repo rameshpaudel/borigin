@@ -1,35 +1,63 @@
  <!-- BEGIN FOOTER -->
-    <footer class="footer">
-        <section id="footer">            
-            <div class="container">    
-                <div class="row">
+    <footer class="footer" >
+        <section id="footer" class="container" >
+            <div class="col-sm-12 col-md-4 footer-column  not-right-column animated fadeInLeft">    
+                
                         <div class="footer-text">
-                            <h4>Contact</h4>
+                            <h2>Contact</h2>
                             <ul class="icon-list list-unstyled">
-                                <li><i class="fa fa-phone"></i> +22176811</li>
-                                <li><i class="fa fa-mobile"></i> +6789998212</li>
-                                <li><i class="fa fa-envelope-o"></i> msg-reply@site.com</li>
-                                <li><i class="fa fa-map-marker"></i> location, Kathmandu</li>
-                                <li><i class="fa fa-clock-o"></i> Sunday to Friday - 10 AM to 6 PM</li>
+                                <li>
+                                    <i class="fa  fa-phone"></i> 
+                                    <?php echo get_option('phone_1' ); ?>
+                                </li>
+                                <?php if(! strlen(get_option('phone_2' )) < 2): ?>
+                                    <li>
+                                        <i class="fa   fa-phone"></i>
+                                        <?php echo get_option('phone_2' ); ?>
+                                    </li>
+                                <?php endif; ?>
+                                <li>
+                                    <i class="fa fa-envelope-o"></i>
+                                    <?php echo get_option('contact_email' ); ?>
+                                </li>
+                                <li>
+                                    <i class="fa  fa-map-marker"></i> 
+                                    <?php echo get_option('office_location') ?>
+                                </li>
+                                <li>
+                                    <i class="fa  fa-clock-o"></i> 
+                                    <?php echo get_option('office_timing') ?>
+                                </li>
+                               
                             </ul>
-                            <ul class="social-icon-list list-unstyled list-inline">
-                                <li class="facebook"><a href="#" ><i class="fa fa-facebook"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li class="youtube"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                <li class="hidden-xs instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <ul class="list-unstyled list-inline">
+                                <li >
+                                    <a href="<?php echo get_option('facebook_link') ?>" >
+                                        <i class="fa fa-2x fa-facebook" style="color:#ededed"></i>
+                                    </a>
+                                </li>
+                               
                             </ul>
+                           
                         </div>
                         <!-- //.footer-text -->
-                    </div>
+                    
                     <!-- //.footer-column -->
                     
                     
                 </div>
                 <!-- //.row -->
-            </div>
-            <!-- //.container -->
+            <?php if ( is_active_sidebar( 'footer-center-widget' ) ) : ?>
+            
+                <?php dynamic_sidebar( 'footer-center-widget' ); ?>
+            
+            <?php endif; ?>
+            <?php if ( is_active_sidebar( 'footer-right-widget' ) ) : ?>
+            
+                <?php dynamic_sidebar( 'footer-right-widget' ); ?>
+            
+            <?php endif; ?>
+
         </section>
         <!-- //END FOOTER SECTION -->
         
@@ -37,10 +65,10 @@
         <div id="copyright">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-9">
-                        <p>&copy; 2015  <a href="#"> Blue Origin</a> All Rights Reserved.</p>
+                    <div class="col-md-9 col-sm-12">
+                        <p>&copy; <?php echo date('Y'); ?>  <a href="#"> Blue Origin</a> All Rights Reserved.</p>
                     </div>
-                    <div class="col-md-3 pull-right">
+                    <div class="col-md-3 col-sm-12 pull-right">
                         <span> Powered by: <a href="#">e-Pal Technologies</a></span>
                     </div>
                 </div>
